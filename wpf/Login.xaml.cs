@@ -29,8 +29,8 @@ namespace wpf
         {
             Sign n = new();
             MainWindow m = new(n);
-            m.ShowDialog();
             Close();
+            m.ShowDialog();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

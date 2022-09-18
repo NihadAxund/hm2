@@ -47,8 +47,8 @@ namespace wpf
         {
  
             dispatcherTimer.Stop();
-            wnd1.ShowDialog();
             Close();
+            wnd1.ShowDialog();
         }
 
     }
