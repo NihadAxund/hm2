@@ -32,14 +32,21 @@ namespace wpf
             Close();
             m.ShowDialog();
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Start()
         {
             if (sql.Check(Name_txt.Text, Password_txt.Text))
             {
                 MessageBox.Show("Hello");
             }
             else MessageBox.Show("No User");
+
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (Name_txt.Text.Length>2 && Password_txt.Text.Length>5)
+            {
+                Start();
+            }
         }
     }
 }
