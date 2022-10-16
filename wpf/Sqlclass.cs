@@ -17,11 +17,19 @@ namespace wpf
         {
             using (SqlConnection conn = new(connectionString))
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(@"SELECT * FROM Authors WHERE Id = @id OR FirstName = @UserName", conn);
-                cmd.Parameters.Add("@name", System.Data.SqlDbType.NVarChar).Value = UserName;
-                SqlDataReader reader = cmd.ExecuteReader();
-                return reader.FieldCount != 0;
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(@"SELECT * FROM Authors WHERE Id = @id OR FirstName = @UserName", conn);
+                    cmd.Parameters.Add("@name", System.Data.SqlDbType.NVarChar).Value = UserName;
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    return reader.FieldCount != 0;
+
+                }
+                catch
+                {
+                    return false;
+                }
             }
         }
         public bool AddUser(string UserName, string password)

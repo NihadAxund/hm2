@@ -43,10 +43,9 @@ namespace wpf
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (Name_txt.Text.Length>2 && Password_txt.Text.Length>5)
-            {
-                Start();
-            }
+            if (Name_txt.Text.Length > 2 && Password_txt.Text.Length > 5) Start();
+            else MessageBox.Show("Name_txt.Text.Length>2 && Password_txt.Text.Length>5");
+            
         }
     }
 }
