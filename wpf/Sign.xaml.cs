@@ -25,22 +25,31 @@ namespace wpf
             InitializeComponent();
         }
         private void Button_Click(object sender, RoutedEventArgs e) => Close();
-       
-        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Func()
         {
             Login n = new();
             MainWindow m = new(n);
             Close();
             m.ShowDialog();
         }
+        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Func();
+        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (Password_textbox.Text.Length <= 6 && Name_textBox.Text.Length >= 3)
+
+            if (Password_textbox.Text.Length >= 6 && Name_textBox.Text.Length >= 3)
             {
                 string name = Password_textbox.Text;
                 string password = Name_textBox.Text;
-                if (!sql.Check(name, password)) sql.AddUser(name, password);
+                if (!sql.Check(name, password))
+                {
+                    if (sql.AddUser(name, password)) Func();
+                    else MessageBox.Show("sql error");
+
+                }
                 else MessageBox.Show("Bu user var");
             }
             else MessageBox.Show("Password > 5 and Name>3");
