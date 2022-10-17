@@ -9,6 +9,10 @@
 
   <ItemGroup>
     <None Remove="3WyW.gif" />
+    <None Remove="book.gif" />
+    <None Remove="NihatBook.gif" />
+    <None Remove="View\Untitled-1.png" />
+    <None Remove="View\Untitled-2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,7 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\3WyW.gif" />
+    <Resource Include="View\Resources\book.gif" />
+    <Resource Include="View\Resources\NihatBook.gif" />
+    <Resource Include="View\Untitled-1.png" />
+    <Resource Include="View\Untitled-2.png" />
   </ItemGroup>
 
 </Project>
