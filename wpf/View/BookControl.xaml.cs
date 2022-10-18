@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using wpf.Model;
 
 namespace wpf.View
 {
@@ -20,12 +21,35 @@ namespace wpf.View
     /// </summary>
     public partial class BookControl : UserControl
     {
-        ToolTip a = new();
-        public BookControl()
+        private BookControl()
         {
             InitializeComponent();
-            a.Content = "A";
-            btn.ToolTip = a;
+        }
+        private int Number { get; set; } = 0;
+        public BookControl(Books bk)
+        {
+            InitializeComponent();
+            lbl_txt.Content = bk.Name;
+            Count.Content = "Count: "+bk.Quantity.ToString();
+        }
+        private void Funtion()
+        {
+            Count_txt.Content = Number.ToString();
+            //MessageBox.Show(Number)
+        }
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+            Number++;
+            Funtion();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Number>0)
+            {
+                Number--;
+            }
+            Funtion();
         }
     }
 }

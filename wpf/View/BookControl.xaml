@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:wpf.View"
              mc:Ignorable="d" 
              xmlns:gif="http://wpfanimatedgif.codeplex.com"
-             d:DesignHeight="120" d:DesignWidth="80" Background="Transparent"  >
+             d:DesignHeight="120" d:DesignWidth="80" MinWidth="80" MinHeight="120" MaxHeight="120" MaxWidth="80" Background="Transparent"  >
     <Grid>
 
         
@@ -21,7 +21,7 @@
                    gif:ImageBehavior.RepeatBehavior="1">
             </Image>
         </Border>
-        <Label  Grid.RowSpan="2" Margin="0,60,0,0" HorizontalAlignment="Center" FontSize="10" FontFamily="Algerian" >
+        <Label Name="lbl_txt"  Grid.RowSpan="2" Margin="0,60,0,0" HorizontalAlignment="Center" FontSize="8.8" FontFamily="Algerian" >
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF00B3FF" Offset="1"/>
@@ -29,9 +29,12 @@
                 </LinearGradientBrush>
             </Label.Foreground> Book Name
         </Label>
+        <Label Name="Count"  Grid.RowSpan="2" Margin="0,75,0,0" HorizontalAlignment="Center" FontSize="10" FontFamily="Bodoni MT" Background="{x:Null}" Foreground="#DD00E3FF" >
+            COUNT: 
+        </Label>
         <StackPanel Grid.Row="1" Orientation="Horizontal"  >
 
-            <Button Name="btn" Width="13" Height="13" Margin="17,0,0,0" BorderBrush="#FF5AFF00" >
+            <Button Click="btn_Click" Name="btn" Width="13" Height="13" Margin="17,0,0,0" BorderBrush="#FF5AFF00" >
 
       
 
@@ -39,8 +42,8 @@
                     <ImageBrush ImageSource="/View/Untitled-1.png"/>
                 </Button.Background>
             </Button>
-            <Label Width="20" Height="20" FontSize="10" Foreground="#FF0084FF" FontWeight="Bold" >1</Label>
-            <Button Width="13" Height="13" Margin="0,0,0,0" BorderBrush="Red">
+            <Label Name="Count_txt" Width="20" Height="20" FontSize="10" Foreground="#FF0084FF" FontWeight="Bold" >0</Label>
+            <Button Width="13" Height="13" Margin="0,0,0,0" BorderBrush="Red" Click="Button_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="/View/Untitled-2.png"/>
                 </Button.Background>

@@ -19,7 +19,7 @@ namespace wpf
 {
     public partial class MainWindow : Window
     {
-        
+        Main a = new Main();
         public MainWindow()
         {
             InitializeComponent();
@@ -34,7 +34,6 @@ namespace wpf
         }
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-            Main a = new Main();
             dispatcherTimer.Stop();
             this.Close();
             a.ShowDialog();
