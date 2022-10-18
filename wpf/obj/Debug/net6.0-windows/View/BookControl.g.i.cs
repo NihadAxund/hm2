@@ -86,7 +86,7 @@ namespace wpf.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/wpf;V1.0.0.0;component/view/bookcontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/wpf;component/view/bookcontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\BookControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
