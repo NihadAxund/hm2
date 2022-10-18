@@ -71,6 +71,16 @@ namespace wpf.View
             }
               return db.Query<Books>(sql);
         }
+        private bool AuthorSearch(Books bk,string txt)
+        {
+
+            var sql = "SELECT * FROM Authors WHERE Id = @Id;";
+            Author a = db.Query<Author>(sql, new { @Id = bk.Id_Author }).FirstOrDefault();
+            string FullName = a.LastName+" "+a.FirstName;
+            if (FullName.ToLower().Contains(txt)) return true;
+            return false;
+            
+        }
         public IEnumerable<Author> GetAllAuthor(List<Books> bk)
         {
             List<Author> aut = new List<Author>();
@@ -95,27 +105,72 @@ namespace wpf.View
             MyFunction();
         }
         private IDbConnection db;
-        private void MyFunction()
+        private void MyFunction(List<Books> bkk = null)
         {
-            foreach (var item in book)
+            Book_list.Children.Clear();
+            if (bkk==null)
             {
-                BookControl bk = new(item);
-                ToolTip a = new ToolTip();
-                Author au = author.Find(x => x.Id == item.Id_Author);
-                a.Content = au.FirstName+" "+au.LastName;
-                bk.ToolTip = a;
-                bk.Margin = new Thickness(20, 10, 5, 10);
-                Book_list.Children.Add(bk);
+                foreach (var item in book)
+                {
+                    BookControl bk = new(item);
+                    ToolTip a = new ToolTip();
+                    Author au = author.Find(x => x.Id == item.Id_Author);
+                    a.Content = au.FirstName+" "+au.LastName;
+                    bk.ToolTip = a;
+                    bk.Margin = new Thickness(20, 10, 5, 10);
+                    Book_list.Children.Add(bk);
+                }
             }
-            //for (int i = 0; i < book.Count; i++)
-            //{
-            //    BookControl bk = new();
-            //    ToolTip a = new ToolTip();
-            //    a.Content = "A";
-            //    bk.ToolTip = a;
-            //    bk.Margin = new Thickness(20, 10, 5, 10);
-            //    Book_list.Children.Add(bk);
-            //}
+            else
+            {
+                foreach (var item in bkk)
+                {
+                    BookControl bk = new(item);
+                    ToolTip a = new ToolTip();
+                    Author au = author.Find(x => x.Id == item.Id_Author);
+                    a.Content = au.FirstName + " " + au.LastName;
+                    bk.ToolTip = a;
+                    bk.Margin = new Thickness(20, 10, 5, 10);
+                    Book_list.Children.Add(bk);
+                }
+            }
+        }
+        private bool Search_Method( string txt, Books bk)
+        {
+            if (bk.Name.ToLower().Contains(txt.ToLower()))
+            {
+             //   MessageBox.Show(bk.Name, txt);
+                return true;
+            }
+            else
+            {
+                return AuthorSearch(bk, txt.ToLower());
+            }
+        }
+        private void Search_textbox_PreviewKeyUp(object sender, KeyEventArgs e)
+        {
+            if (Search_textbox.Text=="")
+            {
+                MyFunction();
+            }
+            else if  (Search_textbox.Text.Length!=null && Search_textbox.Text!=" ")
+            {
+               // MessageBox.Show("A");
+                List<Books> bks = new List<Books>();
+                foreach (var item in book)
+                {
+                    if (Search_Method(Search_textbox.Text,item))
+                    {
+                        bks.Add(item);
+                    }
+                }
+                if (bks.Count!=0)
+                {
+                    //MessageBox.Show("He");
+                    MyFunction(bks);
+                }
+            }
+            return;
         }
     }
 }

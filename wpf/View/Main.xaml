@@ -9,7 +9,7 @@
         Title="Main" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.4*"/>
+            <RowDefinition Height="1.6*"/>
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" >
@@ -55,19 +55,23 @@
               Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 <Button
+                                    Margin="0,0,0,0"
             Style="{StaticResource MaterialDesignToolButton}">
+                                    
                                     <materialDesign:PackIcon
               Kind="Search"
               Opacity=".56" />
                                 </Button>
                                 <TextBox
-            Grid.Column="1"
-            Margin="8 0 0 0"
-            materialDesign:HintAssist.Hint="Build a search bar"
-            materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-            BorderThickness="0"
-            MinWidth="200"
-            VerticalAlignment="Center" />
+                                    PreviewKeyUp="Search_textbox_PreviewKeyUp"
+                                    Name="Search_textbox"
+                                      Grid.Column="1"
+                                      Margin="8 0 0 0"
+                                      materialDesign:HintAssist.Hint="Search . . ."
+                                      materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                      BorderThickness="0"
+                                      MinWidth="200"
+                                      VerticalAlignment="Center" />
                                 <Button
             Style="{StaticResource MaterialDesignToolButton}"
             Grid.Column="2">
@@ -78,13 +82,6 @@
                                 </Button>
                             </Grid>
                         </materialDesign:ColorZone>
-                        <Button
-        Style="{StaticResource MaterialDesignToolForegroundButton}"
-        Margin="8 0 0 0"
-        Panel.ZIndex="0">
-                            <materialDesign:PackIcon
-          Kind="Send" />
-                        </Button>
                     </StackPanel>
                 </DockPanel>
             </materialDesign:ColorZone>
