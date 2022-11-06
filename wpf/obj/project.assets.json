@@ -2430,11 +2430,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nihad\\OneDrive\\Masaüstü\\hm3\\wpf\\wpf.csproj",
+      "projectUniqueName": "C:\\Users\\nihad\\OneDrive\\Masaüstü\\Book\\wpf\\wpf.csproj",
       "projectName": "wpf",
-      "projectPath": "C:\\Users\\nihad\\OneDrive\\Masaüstü\\hm3\\wpf\\wpf.csproj",
+      "projectPath": "C:\\Users\\nihad\\OneDrive\\Masaüstü\\Book\\wpf\\wpf.csproj",
       "packagesPath": "C:\\Users\\nihad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nihad\\OneDrive\\Masaüstü\\hm3\\wpf\\obj\\",
+      "outputPath": "C:\\Users\\nihad\\OneDrive\\Masaüstü\\Book\\wpf\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nihad\\AppData\\Roaming\\NuGet\\NuGet.Config",

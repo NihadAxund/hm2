@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pu/wjnOvfjvKMvKwHgce7sv8pQG53RyLTWsYdDPfkFCpt3ICFrFpxDR+qH1E+rIpJ98V9yUyetjWwhbjMYprtQ==",
+  "dgSpecHash": "51WiP/0keoYipBRkYQSPF+26Yc/nKFfNTUzUia1rKVA+qzHkdNRNf4v/p0uo6nIlifwKmefgMy8J6beZMzMQ7g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nihad\\OneDrive\\Masaüstü\\hm3\\wpf\\wpf.csproj",
+  "projectFilePath": "C:\\Users\\nihad\\OneDrive\\Masaüstü\\Book\\wpf\\wpf.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nihad\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\nihad\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

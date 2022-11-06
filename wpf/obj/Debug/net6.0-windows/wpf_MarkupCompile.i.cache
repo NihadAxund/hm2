@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\nihad\OneDrive\Masaüstü\hm3\wpf\obj\Debug\net6.0-windows\
+C:\Users\nihad\OneDrive\Masaüstü\Book\wpf\obj\Debug\net6.0-windows\
 wpf
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\nihad\OneDrive\Masaüstü\hm3\wpf\App.xaml
+C:\Users\nihad\OneDrive\Masaüstü\Book\wpf\App.xaml
 31282492466
 
 10740886507
 220-2114579162
 View\BookControl.xaml;View\Main.xaml;View\MainWindow.xaml;
 
-True
+False
 
